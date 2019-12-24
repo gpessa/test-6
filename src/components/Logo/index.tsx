@@ -1,11 +1,9 @@
 import React from "react";
 import { InferProps } from 'prop-types';
 
-const logo = require("../../assets/logo.png");
+import styles from "./styles.module.css";
 
-const Logo: React.FC<Props> = () => (
-  <img src={logo}/>
-);
+const Logo: React.FC<Props> = () => (<h1 className={styles.element}></h1>);
 
 const propTypes = {
 };

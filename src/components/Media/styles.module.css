@@ -1,0 +1,19 @@
+:local(.imageZoomed) {
+  left: 0!important;
+  top: 0!important;
+  right: 0!important;
+  bottom: 0!important;
+  height: auto!important;
+  width: auto!important;
+}
+
+:local(.image) {
+  max-width: 100%;
+}
+
+:local(.imageFake) {
+  transition: all 2s ease-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

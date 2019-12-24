@@ -1,17 +1,24 @@
-import React from "react";
-import { MediaEntity } from "../../types";
+import React, { useState } from 'react';
 
-import styles from "./styles.module.css";
+import { MediaEntity } from '../../types';
+import Media from '../Media';
+import styles from './styles.module.css';
 
-const Medias = ({ medias }: { medias: MediaEntity[] }) => (
-  <div className={styles.container}>
-    {medias
-      .filter(media => media.Categorie === 1)
-      .map((media, key) => (
-        <img key={key} src={media.MediaItems[2].Url} className={styles.item} />
-      ))}
-  </div>
-);
+const Medias = ({ medias }: { medias: MediaEntity[] }) => {
+  const [open, setOpen] = useState<null | number>(null)
+
+  return (
+    <div className={styles.container}>
+      {medias
+        .filter(media => media.Categorie === 1)
+        .map((media, index) => (
+          <div className={styles.item} onClick={() => setOpen(index)}>
+            <Media key={index} media={media} open={index === open}/>
+          </div>
+        ))}
+    </div>
+  )
+};
 
 export default Medias;
 

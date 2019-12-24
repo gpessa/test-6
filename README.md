@@ -43,9 +43,12 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
+TO IMPROVE
 - Responsive images
 - Accessibility attributes on images
 - More semantich html
 - Schema.org | https://schema.org/House
 - I could have used SCSS
+
+TO DO
+- Fix logo

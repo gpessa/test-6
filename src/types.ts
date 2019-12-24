@@ -10,8 +10,8 @@ export interface Building {
   AfgekochtDatum: string;
   BalkonDakterras?: null;
   BedrijfsruimteCombinatieObject?: null;
-  BezichtingDagdelen?: BezichtingDagdelenEntityOrBezichtingDagenEntity[] | null;
-  BezichtingDagen?: BezichtingDagdelenEntityOrBezichtingDagenEntity[] | null;
+  BezichtingDagdelen?: BezichtingDagdelenEntityOrBezichtingDagenEntity[];
+  BezichtingDagen?: BezichtingDagdelenEntityOrBezichtingDagenEntity[];
   BijdrageVVE?: null;
   Bijzonderheden: string;
   Bouwjaar: string;
@@ -50,7 +50,7 @@ export interface Building {
   IsVerhuurd: boolean;
   IsVerkocht: boolean;
   Isolatie: string;
-  Kenmerken?: KenmerkenEntity[] | null;
+  Kenmerken?: KenmerkenEntity[];
   KenmerkenKort: KenmerkenKort;
   KenmerkenTitel?: null;
   Ligging: string;
@@ -58,13 +58,13 @@ export interface Building {
   Makelaar: string;
   MakelaarId: number;
   MakelaarTelefoon: string;
-  MedeAanbieders?: null[] | null;
+  MedeAanbieders?: null[];
   Media: MediaEntity[];
-  "Media-Foto"?: string[] | null;
+  "Media-Foto"?: string[];
   MobileURL: string;
   ObjectType: string;
   ObjectTypeMetVoorvoegsel: string;
-  OpenHuizen?: null[] | null;
+  OpenHuizen?: null[];
   PerceelOppervlakte: number;
   PermanenteBewoning: string;
   Plaats: string;
@@ -86,7 +86,7 @@ export interface Building {
   SoortParkeergelegenheid: string;
   SoortPlaatsing: number;
   SoortWoning: string;
-  Titels?: TitelsEntity[] | null;
+  Titels?: TitelsEntity[];
   ToonBezichtigingMaken: boolean;
   ToonBrochureAanvraag: boolean;
   ToonMakelaarWoningaanbod: boolean;
@@ -125,10 +125,12 @@ export interface Building {
   Tuin: string;
   VeilingGeformatteerd?: null;
 }
+
 export interface BezichtingDagdelenEntityOrBezichtingDagenEntity {
   Naam: string;
   Waarde: string;
 }
+
 export interface DetailInfo {
   HasPromotionLabel: boolean;
   PromotionLabelType: number;
@@ -136,6 +138,7 @@ export interface DetailInfo {
   RibbonText?: null;
   Tagline?: null;
 }
+
 export interface Energielabel {
   Definitief: boolean;
   Index?: null;
@@ -143,57 +146,57 @@ export interface Energielabel {
   NietBeschikbaar: boolean;
   NietVerplicht: boolean;
 }
+
 export interface KenmerkenEntity {
   Ad?: null;
-  Kenmerken?: KenmerkenEntity1[] | null;
+  Kenmerken?: KenmerkenEntity[];
   LokNummer: number;
-  SubKenmerk?: SubKenmerk | null;
+  SubKenmerk?: SubKenmerk;
   Titel: string;
 }
-export interface KenmerkenEntity1 {
+
+export interface KenmerkenEntity {
   Naam: string;
-  NaamCss?: string | null;
+  NaamCss?: string;
   Waarde: string;
-  WaardeCss?: string | null;
+  WaardeCss?: string;
 }
+
 export interface SubKenmerk {
   Ad: string;
-  Kenmerken?: null[] | null;
+  Kenmerken?: null[];
   LokNummer: number;
   SubKenmerk?: null;
   Titel: string;
 }
 export interface KenmerkenKort {
   Ad?: null;
-  Kenmerken?: KenmerkenEntity2[] | null;
+  Kenmerken?: KenmerkenEntity[];
   LokNummer: number;
   SubKenmerk?: null;
   Titel?: null;
 }
-export interface KenmerkenEntity2 {
-  Naam: string;
-  NaamCss?: null;
-  Waarde: string;
-  WaardeCss?: null;
-}
+
 export interface MediaEntity {
   Categorie: number;
   ContentType: number;
   Id: string;
   IndexNumber: number;
   MediaItems: MediaItemsEntity[];
-  Metadata?: string | null;
-  Omschrijving?: string | null;
+  Metadata?: string;
+  Omschrijving?: string;
   RegistratieVerplicht: boolean;
   Soort: number;
 }
+
 export interface MediaItemsEntity {
   Category: number;
   Height: number;
   Url: string;
-  UrlSecure?: string | null;
+  UrlSecure?: string;
   Width: number;
 }
+
 export interface Prijs {
   GeenExtraKosten?: null;
   HuurAbbreviation: string;
@@ -207,31 +210,36 @@ export interface Prijs {
   OriginelePrijs?: null;
   VeilingText: string;
 }
+
 export interface TitelsEntity {
   Omschrijving: string;
   Pagina: number;
 }
+
 export interface Veiling {
   EindDatum?: null;
   Link?: null;
   StartDatum?: null;
   VeilingPartij?: null;
 }
+
 export interface Video {
   ImageUrl: string;
   QuadiaVideoId: number;
   ThumbnailUrl: string;
-  Videos?: VideosEntity[] | null;
+  Videos?: VideosEntity[];
 }
+
 export interface VideosEntity {
   BitRate: number;
-  Cdns?: CdnsEntity[] | null;
+  Cdns?: CdnsEntity[];
   HasAudio: boolean;
   HasVideo: boolean;
   IsSource: boolean;
   Stream: Stream;
   Url: string;
 }
+
 export interface CdnsEntity {
   DeliveryType: string;
   FileType?: null;
@@ -239,6 +247,7 @@ export interface CdnsEntity {
   SslUrl?: null;
   Url: string;
 }
+
 export interface Stream {
   AverageBitRate: number;
   Height: number;

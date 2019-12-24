@@ -13,7 +13,7 @@ const Logo: React.FC<Props> = ({ address, postcode, city, price }) => {
     <hgroup>
       <h1 className={styles.address}>{address}</h1>
       <h2 className={styles.city}>{postcode} {city}</h2>
-      <div className={styles.price}>{priceFormatted}</div>
+      <h2 className={styles.price}>{priceFormatted}</h2>
     </hgroup>
   )
 };

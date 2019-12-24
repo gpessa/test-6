@@ -24,6 +24,8 @@
   --font-family-header: 'Proxima Nova',BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   --font-family-normal: 'Proxima Nova',BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --h1-font-size: 3rem;
+  --h1-font-size: 2rem;
 }
 
 @font-face {
@@ -39,17 +41,20 @@
 }
 
 html {
-    font-family: var(--font-family-normal);
-    color: #333;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    line-height: 1.5
+  font-family: var(--font-family-normal);
+  color: #333;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
   font-family: var(--font-family-normal);
   color: var(--dark);
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,3 +64,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}

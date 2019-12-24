@@ -1,0 +1,10 @@
+:local(.element) {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary);
+  background-image: url(../../assets/images/logo.png);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  line-height: 0;
+}
