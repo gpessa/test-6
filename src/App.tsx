@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Building } from "./types";
 import "./App.css";
-import { Characteristics, Medias } from "./components";
+import { Characteristics, Medias, Recap, Logo } from "./components";
 
 const App: React.FC = () => {
   const [data, setData] = useState<Building>();
 
   useEffect(() => {
     fetch(
-      "/feeds/Aanbod.svc/json/detail/ac1b0b1572524640a0ecc54de453ea9f/koop/7b79a187-2915-461f-9a2e-fa86f653381f/"
+      "/api/feeds/Aanbod.svc/json/detail/ac1b0b1572524640a0ecc54de453ea9f/koop/7b79a187-2915-461f-9a2e-fa86f653381f/"
     )
       .then(function(response) {
         // The response is a Response instance.
@@ -22,12 +22,15 @@ const App: React.FC = () => {
     <div className="App">
       {data && (
         <>
+          <Logo />
+          <Recap
+            address={data.Adres}
+            postcode={data.Postcode}
+            city={data.Plaats}
+            price={data.Prijs.Koopprijs}
+          />
+          
           <Medias medias={data.Media} />
-          <h1>{data.Adres}</h1>
-          <h2>
-            {data.Postcode} {data.Plaats}
-          </h2>
-          <div>{data.Prijs.Koopprijs}</div>
           <div
             dangerouslySetInnerHTML={{
               __html: data.VolledigeOmschrijving.replace(

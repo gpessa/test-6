@@ -1,11 +1,14 @@
 const proxy = require("http-proxy-middleware");
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.use(
-    "/feeds",
+    "/api",
     proxy({
       target: "http://partnerapi.funda.nl",
-      logLevel: "debug"
+      logLevel: "debug",
+      pathRewrite: {
+        '^/api': '/'
+      }
     })
   );
 };

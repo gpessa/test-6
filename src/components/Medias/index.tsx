@@ -8,9 +8,11 @@ const Medias = ({ medias }: { medias: MediaEntity[] }) => (
     {medias
       .filter(media => media.Categorie === 1)
       .map((media, key) => (
-        <img key={key} src={media.MediaItems[1].Url} className={styles.item} />
+        <img key={key} src={media.MediaItems[2].Url} className={styles.item} />
       ))}
   </div>
 );
 
 export default Medias;
+
+

@@ -1,0 +1,13 @@
+:local(.address) {
+  margin-bottom: 0;
+}
+
+:local(.city) {
+  margin-bottom: 0;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+:local(.price) {
+  margin-bottom: 0;
+}
