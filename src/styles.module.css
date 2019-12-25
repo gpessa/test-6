@@ -1,0 +1,12 @@
+:local(.bar) {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+:local(.recap) {
+  margin-left: var(--spacer);
+  flex: 1;
+}

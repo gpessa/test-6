@@ -1,0 +1,4 @@
+:local(.element) {
+  width: calc(50vw);
+  height: 100%;
+}

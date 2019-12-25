@@ -3,3 +3,8 @@ export { default as Medias } from "./Medias";
 export { default as Recap } from "./Recap";
 export { default as Logo } from "./Logo";
 export { default as ScrollingContainer } from "./ScrollingContainer";
+export { default as Makelaar } from "./Makelaar";
+export { default as Button } from "./Button";
+export { default as Kenmerkenon } from "./Kenmerken";
+export { default as Main } from "./Main";
+export { default as Map } from "./Map";

@@ -1,25 +1,28 @@
 import React from "react";
 import { KenmerkenEntity } from "../../types";
+import styles from "./styles.module.css";
 
 const Characteristics: React.FC<Props> = ({ characteristics }) => (
-  <section style={{ marginBottom: 70 }}>
-      <h3>{characteristics.Titel}</h3>
+  <section>
+    <h3>{characteristics.Titel}</h3>
+    <dl>
       {characteristics.Kenmerken!.map(b => (
-      <div className={`${b.NaamCss}`}>
-        <div>{b.Naam}</div>
-        <span
-          dangerouslySetInnerHTML={{
-            __html: b.Waarde
-          }}
-        />
-      </div>
-    ))}
+        <div className={`${styles.group} ${b.NaamCss}`}>
+          <dt className={styles.label}>{b.Naam}</dt>
+          <dd
+            className={styles.value}
+            dangerouslySetInnerHTML={{
+              __html: b.Waarde
+            }}
+          />
+        </div>
+      ))}
+    </dl>
   </section>
-  );
+);
 
 interface Props {
   characteristics: KenmerkenEntity;
 }
-
 
 export default Characteristics;

@@ -1,0 +1,26 @@
+:local(.element) {
+  position: relative;
+}
+
+:local(.recap) {
+  position: absolute;
+  bottom: var(--spacer);
+  left: var(--spacer);
+  column-count: 4;
+  column-gap: var(--spacer);
+}
+
+:local(.recapCell) {
+  background: var(--white);
+  padding: var(--spacer);
+  text-align: center;
+}
+
+:local(.recapIcon) {
+  width: 30px;
+}
+
+:local(.recapLabel) {
+  white-space: nowrap;
+  font-weight: bold;
+}

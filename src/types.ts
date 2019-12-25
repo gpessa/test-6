@@ -50,7 +50,7 @@ export interface Building {
   IsVerhuurd: boolean;
   IsVerkocht: boolean;
   Isolatie: string;
-  Kenmerken?: KenmerkenEntity[];
+  Kenmerken: KenmerkenEntity[];
   KenmerkenKort: KenmerkenKort;
   KenmerkenTitel?: null;
   Ligging: string;

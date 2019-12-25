@@ -1,33 +1,30 @@
 import React, { useState } from "react";
-import useHorizontal from '@oberon-amsterdam/horizontal/hook';
+import useHorizontal from "@oberon-amsterdam/horizontal/hook";
 
 import styles from "./styles.module.css";
 
-const ScrollingContainer: React.FC<Props> = ({ children }: Props ) => {
+const ScrollingContainer: React.FC<Props> = ({ children }: Props) => {
   const [container, setContainer] = useState();
   useHorizontal({ container: container });
 
   return (
     <div
-      className={styles.container}
+      className={`${styles.container}`}
       ref={ref => {
         setContainer(ref);
       }}
     >
-      {children.map((slide, index) => {
-        return React.cloneElement(slide, {
-          key: index,
-          className: styles.block
-        });
-      })}
+      {children.map((slide, key) => (
+        <div key={key} className={styles.block}>
+          {slide}
+        </div>
+      ))}
     </div>
-  )
+  );
 };
 
 interface Props {
-  children: JSX.Element[]
+  children: JSX.Element[];
 }
 
 export default ScrollingContainer;
-
-

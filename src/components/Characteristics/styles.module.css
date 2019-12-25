@@ -1,3 +1,14 @@
-:local(.element) {
+:local(.label) {
+  color: var(--gray);
+}
 
+:local(.value) {
+}
+
+:local(.group) {
+  border-bottom: 1px solid var(--light);
+  display: flex;
+  width: 400px;
+  margin-bottom: var(--spacer);
+  padding-bottom: var(--spacer);
 }
