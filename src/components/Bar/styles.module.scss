@@ -1,0 +1,13 @@
+@import "../../theme/variables.scss";
+
+:local(.element) {
+  background-color: $white;
+  top: 0;
+  z-index: 10;
+  position: sticky;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

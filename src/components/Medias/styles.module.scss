@@ -1,0 +1,14 @@
+@import "../../theme/variables.scss";
+
+:local(.container) {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0 $spacer;
+}
+
+:local(.title) {
+  max-width: $breakpoint-xl;
+  margin-left: auto;
+  margin-right: auto;
+}

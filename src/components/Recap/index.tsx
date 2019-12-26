@@ -1,22 +1,16 @@
 import React from "react";
 import PropTypes, { InferProps } from "prop-types";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
-const Logo: React.FC<Props> = ({
-  className,
-  address,
-  postcode,
-  city,
-  price
-}) => {
+const Logo: React.FC<Props> = ({ address, postcode, city, price }) => {
   const priceFormatted = new Intl.NumberFormat("nl-NL", {
     style: "currency",
     currency: "EUR"
   }).format(price);
 
   return (
-    <hgroup className={className || ""}>
+    <hgroup className={styles.element}>
       <h1 className={styles.address}>{address}</h1>
       <h2 className={styles.city}>
         {postcode} {city}
@@ -30,12 +24,7 @@ const propTypes = {
   postcode: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  city: PropTypes.string.isRequired,
-  className: PropTypes.string
-};
-
-Logo.defaultProps = {
-  className: ""
+  city: PropTypes.string.isRequired
 };
 
 type Props = InferProps<typeof propTypes>;

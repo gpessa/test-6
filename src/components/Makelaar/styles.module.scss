@@ -1,0 +1,25 @@
+@import "../../theme/variables.scss";
+
+:local(.element) {
+  background: $light;
+  color: $secondary;
+  height: $bar-height;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  padding: $spacer;
+  width: 100%;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-md) {
+    width: auto;
+  }
+}
+
+:local(.name) {
+  font-weight: bold;
+}
+
+:local(.data) {
+  margin-right: $spacer;
+}

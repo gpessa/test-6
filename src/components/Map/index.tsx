@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes, { InferProps } from "prop-types";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const Map: React.FC<Props> = ({ address, x, y }) => {
   const MY_API = "AIzaSyCc3zoz5TZaG3w2oF7IeR-fhxNXi8uywNk";

@@ -1,14 +1,7 @@
 import React from "react";
-import { InferProps } from "prop-types";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
-const Logo: React.FC<Props> = () => <h1 className={styles.element}></h1>;
-
-const propTypes = {};
-
-type Props = InferProps<typeof propTypes>;
-
-Logo.propTypes = propTypes;
+const Logo: React.FC = () => <h1 className={styles.element}></h1>;
 
 export default Logo;

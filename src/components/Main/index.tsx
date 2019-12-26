@@ -1,10 +1,10 @@
 import React from "react";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
-  <>
-    <img src={photo.replace("_groot", "_1440x960")} />
+  <div className={styles.element}>
+    <img className={styles.image} src={photo.replace("_groot", "_1440x960")} />
     <div className={styles.recap}>
       <div className={styles.recapCell}>
         <img
@@ -14,6 +14,7 @@ const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
         <div className={styles.recapLabel}>Year of construction</div>
         <div>{year}</div>
       </div>
+
       <div className={styles.recapCell}>
         <img
           className={styles.recapIcon}
@@ -22,6 +23,7 @@ const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
         <div className={styles.recapLabel}>Number of rooms</div>
         <div>{rooms}</div>
       </div>
+
       <div className={styles.recapCell}>
         <img
           className={styles.recapIcon}
@@ -30,6 +32,7 @@ const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
         <div className={styles.recapLabel}>Living</div>
         <div>{living} m²</div>
       </div>
+
       <div className={styles.recapCell}>
         <img
           className={styles.recapIcon}
@@ -39,7 +42,7 @@ const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
         <div>{plot} m²</div>
       </div>
     </div>
-  </>
+  </div>
 );
 
 type Props = {

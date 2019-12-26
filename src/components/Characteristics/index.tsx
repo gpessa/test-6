@@ -1,9 +1,9 @@
 import React from "react";
 import { KenmerkenEntity } from "../../types";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const Characteristics: React.FC<Props> = ({ characteristics }) => (
-  <section>
+  <section className={styles.element}>
     <h3>{characteristics.Titel}</h3>
     <dl>
       {characteristics.Kenmerken!.map(b => (

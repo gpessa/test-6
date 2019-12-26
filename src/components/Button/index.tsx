@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes, { InferProps } from "prop-types";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const Button: React.FC<Props> = ({ href, variant, children }) => {
   const isLink = !!href;

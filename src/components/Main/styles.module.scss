@@ -1,18 +1,25 @@
+@import "../../theme/variables.scss";
+
 :local(.element) {
+  max-width: $breakpoint-xl;
   position: relative;
+  margin: auto;
+}
+:local(.image) {
+  width: 100%;
 }
 
 :local(.recap) {
   position: absolute;
-  bottom: var(--spacer);
-  left: var(--spacer);
+  bottom: $spacer;
+  left: $spacer;
   column-count: 4;
-  column-gap: var(--spacer);
+  column-gap: $spacer;
 }
 
 :local(.recapCell) {
-  background: var(--white);
-  padding: var(--spacer);
+  background: $white;
+  padding: $spacer;
   text-align: center;
 }
 

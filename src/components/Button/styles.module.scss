@@ -1,3 +1,5 @@
+@import "../../theme/variables.scss";
+
 :local(.element) {
   display: inline-block;
   font-weight: 400;
@@ -14,11 +16,11 @@
 }
 
 :local(.primary) {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: $primary;
+  color: $white;
 }
 
 :local(.secondary) {
-  background-color: var(--secondary);
-  color: var(--white);
+  background-color: $secondary;
+  color: $white;
 }

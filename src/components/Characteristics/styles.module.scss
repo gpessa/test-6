@@ -1,0 +1,21 @@
+@import "../../theme/variables.scss";
+
+:local(.element) {
+}
+
+:local(.label) {
+  color: $gray;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+:local(.value) {
+  margin-left: 0;
+  display: inline-block;
+  width: 50%;
+}
+
+:local(.group) {
+  margin-bottom: 2 * $spacer;
+}

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Proxima Nova;
+  font-weight: 400;
+  src: url(../assets/fonts/proximanova-regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Proxima Nova;
+  font-weight: 600;
+  src: url(../assets/fonts/proximanova-semibold.woff2) format("woff2");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-header;
+  margin-bottom: 1em;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
