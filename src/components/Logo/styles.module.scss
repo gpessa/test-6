@@ -1,8 +1,8 @@
 @import "../../theme/variables.scss";
 
 :local(.element) {
-  width: 92px;
-  height: 92px;
+  width: $bar-height;
+  height: $bar-height;
   background-color: $primary;
   background-position: center;
   background-size: 80%;
