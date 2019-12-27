@@ -2,56 +2,49 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => (
-  <div className={styles.element}>
-    <img
-      alt=""
-      className={styles.image}
-      src={photo.replace("_groot", "_1440x960")}
-    />
-    <div className={styles.recap}>
-      <div className={styles.recapCell}>
-        <img
-          className={styles.recapIcon}
-          alt="Year of construction"
-          src={require("../../assets/images/ico-year.svg")}
-        />
-        <div className={styles.recapLabel}>Year of construction</div>
-        <div>{year}</div>
-      </div>
+const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => {
+  const data = [
+    {
+      icon: require("../../assets/images/ico-year.svg"),
+      label: "Year of construction",
+      value: year
+    },
+    {
+      icon: require("../../assets/images/ico-rooms.svg"),
+      label: "Number of rooms",
+      value: rooms
+    },
+    {
+      icon: require("../../assets/images/ico-living.svg"),
+      label: "Living",
+      value: `${living} m²`
+    },
+    {
+      icon: require("../../assets/images/ico-plot.svg"),
+      label: "Plot",
+      value: `${plot} m²`
+    }
+  ];
 
-      <div className={styles.recapCell}>
-        <img
-          className={styles.recapIcon}
-          alt="Number of rooms"
-          src={require("../../assets/images/ico-rooms.svg")}
-        />
-        <div className={styles.recapLabel}>Number of rooms</div>
-        <div>{rooms}</div>
-      </div>
-
-      <div className={styles.recapCell}>
-        <img
-          className={styles.recapIcon}
-          alt="Living"
-          src={require("../../assets/images/ico-living.svg")}
-        />
-        <div className={styles.recapLabel}>Living</div>
-        <div>{living} m²</div>
-      </div>
-
-      <div className={styles.recapCell}>
-        <img
-          className={styles.recapIcon}
-          alt="Plot"
-          src={require("../../assets/images/ico-plot.svg")}
-        />
-        <div className={styles.recapLabel}>Plot</div>
-        <div>{plot} m²</div>
+  return (
+    <div className={styles.element}>
+      <img
+        alt=""
+        className={styles.image}
+        src={photo.replace("_groot", "_1440x960")}
+      />
+      <div className={styles.recap}>
+        {data.map(({ icon, label, value }) => (
+          <div className={styles.recapCell}>
+            <img className={styles.recapIcon} alt={label} src={icon} />
+            <div className={styles.recapLabel}>{label}</div>
+            <div>{value}</div>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 type Props = {
   photo: string;

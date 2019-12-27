@@ -2,7 +2,7 @@
 
 :local(.element) {
   flex: 1;
-  padding: $spacer;
+  margin: 0 $spacer;
   line-height: 1;
 }
 
@@ -13,7 +13,7 @@
 }
 
 :local(.city) {
-  margin: $spacer / 3 0;
+  margin: $spacer / 4 0;
   color: $gray;
   text-transform: uppercase;
   line-height: 1;
