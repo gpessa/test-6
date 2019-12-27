@@ -1,9 +1,9 @@
-import React from "react";
 import PropTypes, { InferProps } from "prop-types";
+import React from "react";
 
 import styles from "./styles.module.scss";
 
-const Map: React.FC<Props> = ({ address, x, y }) => {
+const Map: React.FC<Props> = ({ x, y }) => {
   const MY_API = "AIzaSyCc3zoz5TZaG3w2oF7IeR-fhxNXi8uywNk";
   let _url = `https://www.google.com/maps/embed/v1/place?key=${MY_API}&q=${y},${x}`;
 
@@ -23,7 +23,6 @@ const Map: React.FC<Props> = ({ address, x, y }) => {
 };
 
 const propTypes = {
-  address: PropTypes.string.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };

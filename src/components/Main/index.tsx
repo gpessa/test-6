@@ -1,3 +1,4 @@
+import PropTypes, { InferProps } from "prop-types";
 import React from "react";
 
 import styles from "./styles.module.scss";
@@ -46,12 +47,16 @@ const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => {
   );
 };
 
-type Props = {
-  photo: string;
-  rooms: number;
-  year: string;
-  living: number;
-  plot: number;
+const propTypes = {
+  photo: PropTypes.string.isRequired,
+  rooms: PropTypes.number.isRequired,
+  year: PropTypes.string.isRequired,
+  living: PropTypes.number.isRequired,
+  plot: PropTypes.number.isRequired
 };
+
+Main.propTypes = propTypes;
+
+type Props = InferProps<typeof propTypes>;
 
 export default Main;

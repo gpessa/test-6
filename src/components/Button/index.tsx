@@ -1,21 +1,19 @@
-import React from "react";
 import PropTypes, { InferProps } from "prop-types";
+import React from "react";
 
 import styles from "./styles.module.scss";
 
 const Button: React.FC<Props> = ({
+  className,
+  children,
   variant,
   type,
-  children,
-  className,
   ...props
 }) => {
   return (
     <button
-      type={"button"}
-      className={`${styles.element} ${className} ${
-        styles[variant || "primary"]
-      }`}
+      type="button"
+      className={`${styles.element} ${className} ${styles[variant]}`}
       {...props}
     >
       {children}
@@ -24,11 +22,11 @@ const Button: React.FC<Props> = ({
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(["primary", "secondary", "link"])
+  variant: PropTypes.oneOf(["primary", "secondary", "link"]).isRequired
 };
 
-type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement>;
-
 Button.propTypes = propTypes;
+
+type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement>;
 
 export default Button;

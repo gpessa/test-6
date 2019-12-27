@@ -1,34 +1,28 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faImages,
+  faAlignJustify,
   faHome,
-  faMapMarked,
+  faImages,
   faList,
-  faAlignJustify
+  faMapMarked
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   Bar,
+  Description,
   Kenmerken,
   Logo,
   Main,
   Makelaar,
   Map,
   Medias,
-  Recap,
   Navigation,
-  Description
+  Recap
 } from "./components";
 import useFetch from "./hooks/useFetch";
 import { Building } from "./types";
-
-export const elements = {
-  EL1: {},
-  EL2: {},
-  EL3: {},
-  EL4: {}
-};
 
 const App: React.FC = () => {
   const { data, loading } = useFetch<Building>(
@@ -36,7 +30,7 @@ const App: React.FC = () => {
   );
 
   return !loading ? (
-    <div>
+    <>
       <Bar>
         <Logo />
 
@@ -82,13 +76,11 @@ const App: React.FC = () => {
           {
             label: "Map",
             icon: <FontAwesomeIcon icon={faMapMarked} />,
-            element: (
-              <Map address={data.Adres} x={data.WGS84_X} y={data.WGS84_Y} />
-            )
+            element: <Map x={data.WGS84_X} y={data.WGS84_Y} />
           }
         ]}
       />
-    </div>
+    </>
   ) : (
     <div>Loading</div>
   );

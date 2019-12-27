@@ -4,7 +4,7 @@ import { MediaEntity } from "../../types";
 import Media from "../Media";
 import styles from "./styles.module.scss";
 
-const Medias = ({ medias }: { medias: MediaEntity[] }) => {
+const Medias: React.FC<Props> = ({ medias }) => {
   const [open, setOpen] = useState<null | number>(null);
 
   return (
@@ -19,5 +19,9 @@ const Medias = ({ medias }: { medias: MediaEntity[] }) => {
     </div>
   );
 };
+
+interface Props {
+  medias: MediaEntity[];
+}
 
 export default Medias;

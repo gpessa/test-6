@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes, { InferProps } from "prop-types";
+import React from "react";
 
 import styles from "./styles.module.scss";
 

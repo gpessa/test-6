@@ -1,22 +1,14 @@
 import React from "react";
 import ScrollNavigation from "react-single-page-navigation";
 
-import styles from "./styles.module.scss";
 import Button from "../Button";
-
-interface Props {
-  sections: {
-    label?: string;
-    element: JSX.Element;
-    icon: JSX.Element;
-  }[];
-}
+import styles from "./styles.module.scss";
 
 const Section: React.FC<Props> = ({ sections }) => {
-  const elements = sections.reduce((elements, element, d) => {
+  const elements = sections.reduce((elements, element, index) => {
     return {
       ...elements,
-      [`element_${d}`]: {}
+      [`element_${index}`]: {}
     };
   }, {}) as {
     [key: string]: any;
@@ -58,5 +50,13 @@ const Section: React.FC<Props> = ({ sections }) => {
     </div>
   );
 };
+
+interface Props {
+  sections: {
+    element: JSX.Element;
+    icon: JSX.Element;
+    label?: string;
+  }[];
+}
 
 export default Section;

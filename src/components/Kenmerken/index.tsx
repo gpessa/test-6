@@ -2,7 +2,6 @@ import React from "react";
 
 import { KenmerkenEntity } from "../../types";
 import Characteristics from "../Characteristics";
-
 import styles from "./styles.module.scss";
 
 const Kenmerken: React.FC<Props> = ({ kenmerken }) => (

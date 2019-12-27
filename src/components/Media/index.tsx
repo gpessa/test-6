@@ -1,6 +1,6 @@
 import React from "react";
-import { MediaEntity } from "../../types";
 
+import { MediaEntity } from "../../types";
 import styles from "./styles.module.scss";
 
 const Media: React.FC<Props> = ({ media, open }) => {
