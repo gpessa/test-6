@@ -1,18 +1,34 @@
 import React from "react";
-import {
-  Logo,
-  Recap,
-  Medias,
-  Map,
-  Makelaar,
-  Main,
-  Bar,
-  Kenmerken
-} from "./components";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faImages,
+  faHome,
+  faMapMarked,
+  faList,
+  faAlignJustify
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  Bar,
+  Kenmerken,
+  Logo,
+  Main,
+  Makelaar,
+  Map,
+  Medias,
+  Recap,
+  Navigation,
+  Description
+} from "./components";
+import useFetch from "./hooks/useFetch";
 import { Building } from "./types";
 
-import useFetch from "./hooks/useFetch";
+export const elements = {
+  EL1: {},
+  EL2: {},
+  EL3: {},
+  EL4: {}
+};
 
 const App: React.FC = () => {
   const { data, loading } = useFetch<Building>(
@@ -34,19 +50,44 @@ const App: React.FC = () => {
         <Makelaar name={data.Makelaar} phone={data.MakelaarTelefoon} />
       </Bar>
 
-      <Main
-        photo={data.HoofdFoto}
-        year={data.Bouwjaar}
-        rooms={data.AantalKamers}
-        living={data.WoonOppervlakte}
-        plot={data.PerceelOppervlakte}
+      <Navigation
+        sections={[
+          {
+            icon: <FontAwesomeIcon icon={faHome} />,
+            element: (
+              <Main
+                photo={data.HoofdFoto}
+                year={data.Bouwjaar}
+                rooms={data.AantalKamers}
+                living={data.WoonOppervlakte}
+                plot={data.PerceelOppervlakte}
+              />
+            )
+          },
+          {
+            label: "Description",
+            icon: <FontAwesomeIcon icon={faAlignJustify} />,
+            element: <Description description={data.VolledigeOmschrijving} />
+          },
+          {
+            label: "Characteristics",
+            icon: <FontAwesomeIcon icon={faList} />,
+            element: <Kenmerken kenmerken={data.Kenmerken} />
+          },
+          {
+            label: "Photos",
+            icon: <FontAwesomeIcon icon={faImages} />,
+            element: <Medias medias={data.Media} />
+          },
+          {
+            label: "Map",
+            icon: <FontAwesomeIcon icon={faMapMarked} />,
+            element: (
+              <Map address={data.Adres} x={data.WGS84_X} y={data.WGS84_Y} />
+            )
+          }
+        ]}
       />
-
-      <Kenmerken kenmerken={data.Kenmerken} />
-
-      <Medias medias={data.Media} />
-
-      <Map address={data.Adres} x={data.WGS84_X} y={data.WGS84_Y} />
     </div>
   ) : (
     <div>Loading</div>

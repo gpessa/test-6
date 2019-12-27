@@ -5,29 +5,33 @@
   position: relative;
   margin: auto;
 }
+
 :local(.image) {
   width: 100%;
 }
 
 :local(.recap) {
-  position: absolute;
-  bottom: $spacer;
-  left: $spacer;
-  column-count: 4;
-  column-gap: $spacer;
+  @media (min-width: $breakpoint-md) {
+    position: absolute;
+    bottom: $spacer;
+    column-count: 4;
+    column-gap: $spacer;
+  }
 }
 
 :local(.recapCell) {
-  background: $white;
-  padding: $spacer;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-top: $spacer;
 }
 
 :local(.recapIcon) {
   width: 30px;
+  margin-right: $spacer;
 }
 
 :local(.recapLabel) {
-  white-space: nowrap;
+  // white-space: nowrap;
   font-weight: bold;
+  margin-right: $spacer;
 }

@@ -3,12 +3,13 @@
 :local(.container) {
   gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin: 0 $spacer;
-}
+  grid-template-columns: repeat(2, 1fr);
 
-:local(.title) {
-  max-width: $breakpoint-xl;
-  margin-left: auto;
-  margin-right: auto;
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

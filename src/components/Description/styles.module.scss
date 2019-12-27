@@ -1,0 +1,6 @@
+@import "../../theme/variables.scss";
+
+:local(.element) {
+  max-width: $breakpoint-xl;
+  margin: auto;
+}

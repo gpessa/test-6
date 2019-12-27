@@ -3,23 +3,31 @@ import PropTypes, { InferProps } from "prop-types";
 
 import styles from "./styles.module.scss";
 
-const Button: React.FC<Props> = ({ href, variant, children }) => {
-  const isLink = !!href;
-  const Tag = isLink ? "a" : "button";
-
+const Button: React.FC<Props> = ({
+  variant,
+  type,
+  children,
+  className,
+  ...props
+}) => {
   return (
-    <Tag className={`${styles.element} ${styles[variant || "primary"]}`}>
+    <button
+      type={"button"}
+      className={`${styles.element} ${className} ${
+        styles[variant || "primary"]
+      }`}
+      {...props}
+    >
       {children}
-    </Tag>
+    </button>
   );
 };
 
 const propTypes = {
-  href: PropTypes.string,
-  variant: PropTypes.oneOf(["primary", "secondary"])
+  variant: PropTypes.oneOf(["primary", "secondary", "link"])
 };
 
-type Props = InferProps<typeof propTypes>;
+type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement>;
 
 Button.propTypes = propTypes;
 

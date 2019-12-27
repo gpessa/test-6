@@ -2,7 +2,7 @@
 
 :local(.element) {
   background-color: $white;
-  top: 0;
+  top: $spacer;
   z-index: 10;
   position: sticky;
   display: flex;

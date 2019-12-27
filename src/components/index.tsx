@@ -9,3 +9,5 @@ export { default as Main } from "./Main";
 export { default as Map } from "./Map";
 export { default as Bar } from "./Bar";
 export { default as Kenmerken } from "./Kenmerken";
+export { default as Navigation } from "./Navigation";
+export { default as Description } from "./Description";
