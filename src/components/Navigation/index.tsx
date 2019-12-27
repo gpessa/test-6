@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import React from "react";
 import ScrollNavigation from "react-single-page-navigation";
 
 import styles from "./styles.module.scss";

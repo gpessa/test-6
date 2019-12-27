@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes, { InferProps } from "prop-types";
 
 import styles from "./styles.module.scss";
@@ -9,6 +9,7 @@ const Map: React.FC<Props> = ({ address, x, y }) => {
 
   return (
     <iframe
+      title="Map"
       width="100%"
       height="600"
       src={_url}

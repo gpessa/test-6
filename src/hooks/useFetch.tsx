@@ -1,14 +1,5 @@
 import { useState, useEffect } from "react";
 
-// type UseFetch = <S>(
-//   url: string,
-//   options?: RequestInit
-// ) => {
-//   data: S;
-//   error?: any;
-//   loading: boolean;
-// };
-
 const useFetch: <S>(
   url: string,
   options?: RequestInit
@@ -35,7 +26,7 @@ const useFetch: <S>(
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [options, url]);
 
   return { data, error, loading };
 };
