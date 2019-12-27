@@ -1,12 +1,16 @@
 # Decisions
 
+- **Typescript:** I love it! Make my day better and improve my code. It add more works but on a long run it reduce bugs and helps on refactoring
+- **SCSS:** For small project I use css variables but SCSS still helps a lot to share variables and keep the design consistent.
+- **CSS Modules:** in the past I was using BEM to name my css classes, after I discover CSS Modules and I felt in love. It allow you scoping, the class name are shorter, less problem on naming conventions.
+
 ## Things I would improve on a real project
 
-- Responsive images: given your website is full of images I would handle better the different images used in different resolutions.
-- Accessibility: I would add title on the images, make buttons more accessible. More semantich html cold be used.
-- Schema.org | https://schema.org/House: I could add attributes by creating a structured data markup schema supported by major search engines
-- I would use a routing library to retrieve informations (house id) from the url and make the page more dynamic
-- I would use a state managment technology (redux) to store data and separate logic.
+- **Responsive images:** given your website is full of images I would handle better the different images used in different resolutions.
+- **Accessibility:** I would add title on the images, make buttons more accessible. More semantich html cold be used. etc.
+- **Schema.org | https://schema.org/House:** I would add attributes by creating a structured data markup schema supported by major search engines
+- **routing library:** I would use a routing library to retrieve informations (house id) from the url and make the page more dynamic
+- **state managment:** I would use a state managment technology (redux) to store data and separate logic.
 
 ## Available Scripts
 
@@ -22,15 +26,8 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder.
