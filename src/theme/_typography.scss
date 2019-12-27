@@ -19,6 +19,7 @@ h6 {
   font-family: $font-family-header;
   margin-bottom: 1em;
   margin-top: 0;
+  font-weight: bold;
 }
 
 h1 {
@@ -27,4 +28,12 @@ h1 {
 
 h2 {
   font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
 }

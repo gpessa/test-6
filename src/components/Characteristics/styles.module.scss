@@ -5,6 +5,11 @@
   width: 50%;
   display: inline-block;
   vertical-align: top;
+  overflow: hidden;
+}
+
+:local(.title) {
+  text-transform: uppercase;
 }
 
 :local(.value) {
@@ -14,5 +19,5 @@
 }
 
 :local(.group) {
-  margin-bottom: 2 * $spacer;
+  margin: 2 * $spacer 0;
 }

@@ -3,33 +3,40 @@
 :local(.list) {
   max-width: $breakpoint-xl;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: $spacer * 4;
 
-  & > * {
-    position: relative;
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacer * 4;
+    display: grid;
 
-    &:after {
-      border-right: 1px solid $light;
-      content: "";
-      top: 0;
-      right: -$spacer * 2;
-      height: 100%;
-      display: block;
-      position: absolute;
+    & > * {
+      position: relative;
+
+      &:after {
+        border-right: 1px solid $light;
+        content: "";
+        top: 0;
+        right: -$spacer * 2;
+        height: 100%;
+        display: block;
+        position: absolute;
+      }
     }
+  }
 
-    &:nth-child(3n + 3):after {
+  @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+
+    > *:nth-child(2n + 2):after {
       content: none;
     }
   }
 
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: repeat(3, 1fr);
+
+    > *:nth-child(3n + 3):after {
+      content: none;
+    }
   }
 }

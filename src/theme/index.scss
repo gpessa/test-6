@@ -1,3 +1,4 @@
+@import "./reset";
 @import "./variables";
 @import "./typography";
 
@@ -10,11 +11,8 @@
 html {
   font-family: $font-family-normal;
   color: $dark;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  margin: 0;
   padding: $spacer;
 }
