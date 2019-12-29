@@ -1,22 +1,59 @@
 import React, { useState } from "react";
 
 import { MediaEntity } from "../../types";
-import Media from "../Media";
 import styles from "./styles.module.scss";
+import Button from "../Button";
+import useGallery from "../../hooks/useGallery";
 
 const Medias: React.FC<Props> = ({ medias }) => {
-  const [open, setOpen] = useState<null | number>(null);
+  const {
+    showPreviousDisabled,
+    showNextDisabled,
+    showPrevious,
+    showNext,
+    pictures,
+    active,
+    close,
+    open
+  } = useGallery(medias);
 
   return (
-    <div className={styles.container}>
-      {medias
-        .filter((media, index) => media.Categorie === 1 && index > 1)
-        .map((media, index) => (
-          <div className={styles.item} onClick={() => setOpen(index)}>
-            <Media key={index} media={media} open={index === open} />
+    <>
+      {active !== null && (
+        <div className={styles.modal} onClick={close}>
+          <Button
+            disabled={showPreviousDisabled}
+            onClick={e => {
+              e.stopPropagation();
+              showPrevious();
+            }}
+          >
+            Back
+          </Button>
+          <img className={styles.modalImage} src={active.MediaItems[3].Url} />
+          <Button
+            disabled={showNextDisabled}
+            onClick={e => {
+              e.stopPropagation();
+              showNext();
+            }}
+          >
+            Next
+          </Button>
+        </div>
+      )}
+      <div className={styles.medias}>
+        {pictures.map(picture => (
+          <div onClick={() => open(picture)}>
+            <img
+              className={styles.mediasItem}
+              src={picture.MediaItems[2].Url}
+              alt=""
+            />
           </div>
         ))}
-    </div>
+      </div>
+    </>
   );
 };
 

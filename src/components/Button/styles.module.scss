@@ -1,6 +1,6 @@
 @import "../../theme/variables.scss";
 
-:local(.element) {
+:local(.button) {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -13,14 +13,26 @@
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 2px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
-:local(.primary) {
+:local(.button--primary) {
   background-color: $primary;
   color: $white;
+
+  &:disabled {
+    background-color: lighten($primary, 10%);
+  }
 }
 
-:local(.secondary) {
+:local(.button--secondary) {
   background-color: $secondary;
   color: $white;
+
+  &:disabled {
+    background-color: lighten($secondary, 10%);
+  }
 }

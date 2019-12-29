@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Bar> Render correctly Bar component 1`] = `
+<div
+  className="element"
+>
+  <h1>
+    Cane
+  </h1>
+  <h2>
+    Gatto
+  </h2>
+</div>
+`;

@@ -9,23 +9,29 @@ const Button: React.FC<Props> = ({
   variant,
   type,
   ...props
-}) => {
-  return (
-    <button
-      type="button"
-      className={`${styles.element} ${className} ${styles[variant]}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    type={type as React.ButtonHTMLAttributes<HTMLButtonElement>["type"]}
+    className={`${styles.button} ${className} ${variant &&
+      styles[`button--${variant}`]}`}
+    {...props}
+  >
+    {children}
+  </button>
+);
 
 const propTypes = {
-  variant: PropTypes.oneOf(["primary", "secondary", "link"]).isRequired
+  type: PropTypes.oneOf(["button", "reset", "submit", null]),
+  variant: PropTypes.oneOf(["primary", "secondary", "link", null])
+};
+
+const defaultProps = {
+  type: "button",
+  variant: "primary"
 };
 
 Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
 type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement>;
 

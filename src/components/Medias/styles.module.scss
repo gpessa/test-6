@@ -1,6 +1,6 @@
 @import "../../theme/variables.scss";
 
-:local(.container) {
+:local(.medias) {
   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -12,4 +12,25 @@
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: repeat(6, 1fr);
   }
+}
+
+:local(.mediasItem) {
+  max-width: 100%;
+}
+
+:local(.modal) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+}
+
+:local(.modalImage) {
+  max-width: 100%;
 }
