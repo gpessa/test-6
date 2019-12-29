@@ -21,7 +21,7 @@ import {
   Recap
 } from "../../components";
 import { Building } from "../../types";
-import useFetch from "../../hooks/useFetch";
+import { useFetch } from "../../hooks";
 import { useParams } from "react-router-dom";
 
 const House: React.FC<Props> = () => {

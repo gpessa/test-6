@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MediaEntity } from "../types";
+import { MediaEntity } from "../../types";
 
 const useGallery: (
   medias: MediaEntity[]
@@ -8,8 +8,8 @@ const useGallery: (
   active: MediaEntity | null;
   showPreviousDisabled: boolean;
   showNextDisabled: boolean;
-  showNext: () => void;
   showPrevious: () => void;
+  showNext: () => void;
   close: () => void;
   open: (picture: MediaEntity) => void;
 } = medias => {
@@ -23,13 +23,9 @@ const useGallery: (
     setSelected(index);
   };
 
-  const showNext = () => {
-    setSelected(setSelected => setSelected! + 1);
-  };
+  const showNext = () => setSelected(setSelected => setSelected! + 1);
 
-  const showPrevious = () => {
-    setSelected(setSelected => setSelected! - 1);
-  };
+  const showPrevious = () => setSelected(setSelected => setSelected! - 1);
 
   const showPreviousDisabled = selected! > 0 ? false : true;
   const showNextDisabled = selected! < pictures.length - 1 ? false : true;

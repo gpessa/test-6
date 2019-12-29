@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { MediaEntity } from "../../types";
 import styles from "./styles.module.scss";
 import Button from "../Button";
-import useGallery from "../../hooks/useGallery";
+import { useGallery } from "../../hooks";
 
 const Medias: React.FC<Props> = ({ medias }) => {
   const {
@@ -30,7 +30,11 @@ const Medias: React.FC<Props> = ({ medias }) => {
           >
             Back
           </Button>
-          <img className={styles.modalImage} src={active.MediaItems[3].Url} />
+          <img
+            className={styles.modalImage}
+            src={active.MediaItems[3].Url}
+            alt=""
+          />
           <Button
             disabled={showNextDisabled}
             onClick={e => {

@@ -183,8 +183,8 @@ export interface MediaEntity {
   Id: string;
   IndexNumber: number;
   MediaItems: MediaItemsEntity[];
-  Metadata?: string;
-  Omschrijving?: string;
+  Metadata: string | null;
+  Omschrijving: string | null;
   RegistratieVerplicht: boolean;
   Soort: number;
 }
