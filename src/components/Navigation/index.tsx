@@ -1,5 +1,5 @@
 import React from "react";
-import ScrollNavigation from "react-single-page-navigation";
+import ScrollNavigation, { ISectionRefs } from "react-single-page-navigation";
 
 import Button from "../Button";
 import styles from "./styles.module.scss";
@@ -8,15 +8,13 @@ const Section: React.FC<Props> = ({ sections }) => {
   const elements = sections.reduce((elements, element, index) => {
     return {
       ...elements,
-      [`element_${index}`]: {}
+      [`section_${index}`]: {}
     };
-  }, {}) as {
-    [key: string]: any;
-  };
+  }, {}) as ISectionRefs<any>;
 
   return (
     <div className={styles.element}>
-      <ScrollNavigation elements={elements} offset={-110}>
+      <ScrollNavigation elements={elements} offset={-90}>
         {({ refs, activeElement, goTo }) => (
           <div>
             {Object.values(refs).map((child, index) => {
@@ -36,8 +34,8 @@ const Section: React.FC<Props> = ({ sections }) => {
                 <Button
                   variant="link"
                   className={`${styles.navLink} ${activeElement ===
-                    `element_${index}` && styles.navLinkActive}`}
-                  onClick={() => goTo(`element_${index}`)}
+                    `section_${index}` && styles.navLinkActive}`}
+                  onClick={() => goTo(`section_${index}`)}
                   title={sections[index].label}
                 >
                   <div className={styles.navIcon}>{sections[index].icon}</div>

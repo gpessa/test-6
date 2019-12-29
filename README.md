@@ -9,8 +9,8 @@
 - **Responsive images:** given your website is full of images I would handle better the different images used in different resolutions.
 - **Accessibility:** I would add title on the images, make buttons more accessible. More semantich html cold be used. etc.
 - **Schema.org | https://schema.org/House:** I would add attributes by creating a structured data markup schema supported by major search engines
-- **routing library:** I would use a routing library to retrieve informations (house id) from the url and make the page more dynamic
 - **state managment:** I would use a state managment technology (redux) to store data and separate logic.
+- **tests:** I would implement tests on each component/hook
 
 ## Available Scripts
 

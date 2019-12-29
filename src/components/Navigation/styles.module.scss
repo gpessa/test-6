@@ -13,7 +13,7 @@
 
 :local(.nav) {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   bottom: $spacer;

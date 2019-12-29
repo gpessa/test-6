@@ -22,7 +22,6 @@ const useFetch: <S>(
       } catch (error) {
         setError(error);
       }
-
       setLoading(false);
     };
     fetchData();

@@ -23,6 +23,7 @@ const Medias: React.FC<Props> = ({ medias }) => {
         <div className={styles.modal} onClick={close}>
           <Button
             disabled={showPreviousDisabled}
+            className={`${styles.modalPreviousButton} ${styles.modalButton}`}
             onClick={e => {
               e.stopPropagation();
               showPrevious();
@@ -37,6 +38,7 @@ const Medias: React.FC<Props> = ({ medias }) => {
           />
           <Button
             disabled={showNextDisabled}
+            className={`${styles.modalNextButton} ${styles.modalButton}`}
             onClick={e => {
               e.stopPropagation();
               showNext();

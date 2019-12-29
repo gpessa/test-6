@@ -34,3 +34,17 @@
 :local(.modalImage) {
   max-width: 100%;
 }
+
+:local(.modalButton) {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+:local(.modalPreviousButton) {
+  left: $spacer;
+}
+
+:local(.modalNextButton) {
+  right: $spacer;
+}
