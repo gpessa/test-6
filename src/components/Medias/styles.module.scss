@@ -1,7 +1,7 @@
 @import "../../theme/variables.scss";
 
 :local(.medias) {
-  gap: 1rem;
+  gap: $spacer;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -16,6 +16,13 @@
 
 :local(.mediasItem) {
   max-width: 100%;
+  transform: scale(1);
+  transition: transform 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 :local(.modal) {

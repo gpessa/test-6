@@ -8,17 +8,23 @@ const Button: React.FC<Props> = ({
   children,
   variant,
   type,
+  href,
   ...props
-}) => (
-  <button
-    type={type as React.ButtonHTMLAttributes<HTMLButtonElement>["type"]}
-    className={`${styles.button} ${className} ${variant &&
-      styles[`button--${variant}`]}`}
-    {...props}
-  >
-    {children}
-  </button>
-);
+}) => {
+  const Tag = href ? 'a' : 'button'
+
+  return (
+    <Tag
+      type={type as React.ButtonHTMLAttributes<HTMLButtonElement>["type"]}
+      className={`${styles.button} ${className} ${variant &&
+        styles[`button--${variant}`]}`}
+      href={href}
+      {...props}
+    >
+      {children}
+    </Tag>
+  )
+};
 
 const propTypes = {
   type: PropTypes.oneOf(["button", "reset", "submit", null]),
@@ -33,6 +39,6 @@ const defaultProps = {
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 
-type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement>;
+type Props = InferProps<typeof propTypes> & React.HTMLProps<HTMLButtonElement> & React.HTMLProps<HTMLAnchorElement>;
 
 export default Button;

@@ -9,13 +9,16 @@ describe("<Button>", () => {
     expect(element).toMatchSnapshot();
   });
 
-  it("Should have type=button by default", () => {
-    const type = mount(<Button>Sumbit</Button>)
-      .find("button")
-      .getDOMNode()
-      .getAttribute("type");
+  it('Should output an anchor if called with a href', () => {
+    let href = '/url';
 
-    expect(type).toBe("button");
+    const wrapper = shallow(<Button href={href}>Title</Button>);
+    expect(wrapper.find('a').prop('href')).toBe(href)
+  });
+
+  it('Should output an button if called without a href', () => {
+    const wrapper = shallow(<Button>Title</Button>);
+    expect(wrapper.find('button').exists()).toBe(true);
   });
 
   it("Should show the type if passed one", () => {

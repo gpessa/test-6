@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
-  Bar,
+  StickyBar,
   Description,
   Kenmerken,
   Logo,
@@ -34,7 +34,7 @@ const House: React.FC<Props> = () => {
     <div>Loading</div>
   ) : (
     <>
-      <Bar>
+      <StickyBar>
         <Logo />
 
         <Recap
@@ -45,7 +45,7 @@ const House: React.FC<Props> = () => {
         />
 
         <Makelaar name={data.Makelaar} phone={data.MakelaarTelefoon} />
-      </Bar>
+      </StickyBar>
 
       <Navigation
         sections={[

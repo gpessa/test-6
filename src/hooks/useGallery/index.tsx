@@ -13,8 +13,8 @@ const useGallery: (
   close: () => void;
   open: (picture: MediaEntity) => void;
 } = medias => {
-  const [selected, setSelected] = useState<null | number>(null);
   const pictures = medias.filter(media => media.Categorie === 1);
+  const [selected, setSelected] = useState<null | number>(null);
 
   const close = () => setSelected(null);
 

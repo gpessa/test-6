@@ -1,5 +1,5 @@
 import React from "react";
-import Bar from "./";
+import Bar from ".";
 import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 

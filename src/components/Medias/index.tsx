@@ -24,7 +24,7 @@ const Medias: React.FC<Props> = ({ medias }) => {
           <Button
             disabled={showPreviousDisabled}
             className={`${styles.modalPreviousButton} ${styles.modalButton}`}
-            onClick={e => {
+            onClick={(e: any) => {
               e.stopPropagation();
               showPrevious();
             }}
@@ -37,9 +37,10 @@ const Medias: React.FC<Props> = ({ medias }) => {
             alt=""
           />
           <Button
+            autoFocus
             disabled={showNextDisabled}
             className={`${styles.modalNextButton} ${styles.modalButton}`}
-            onClick={e => {
+            onClick={(e: any) => {
               e.stopPropagation();
               showNext();
             }}
@@ -50,7 +51,7 @@ const Medias: React.FC<Props> = ({ medias }) => {
       )}
       <div className={styles.medias}>
         {pictures.map(picture => (
-          <div onClick={() => open(picture)}>
+          <div onClick={() => open(picture)} key={picture.MediaItems[2].Url}>
             <img
               className={styles.mediasItem}
               src={picture.MediaItems[2].Url}

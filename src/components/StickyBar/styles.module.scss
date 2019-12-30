@@ -1,6 +1,6 @@
 @import "../../theme/variables.scss";
 
-:local(.element) {
+:local(.stickyBar) {
   background-color: $white;
   top: $spacer;
   z-index: 10;

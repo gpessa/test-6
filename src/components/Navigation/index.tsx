@@ -32,6 +32,7 @@ const Section: React.FC<Props> = ({ sections }) => {
             <div className={styles.nav}>
               {Object.values(refs).map((child, index) => (
                 <Button
+                  autoFocus={index === 0                              }
                   variant="link"
                   className={`${styles.navLink} ${activeElement ===
                     `section_${index}` && styles.navLinkActive}`}

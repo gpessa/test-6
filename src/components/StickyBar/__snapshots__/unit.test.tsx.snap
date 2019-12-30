@@ -2,7 +2,7 @@
 
 exports[`<Bar> Render correctly Bar component 1`] = `
 <div
-  className="element"
+  className="stickyBar"
 >
   <h1>
     Cane

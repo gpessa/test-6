@@ -4,28 +4,32 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const Main: React.FC<Props> = ({ photo, year, rooms, living, plot }) => {
-  const data = [
-    {
-      icon: require("../../assets/images/ico-year.svg"),
-      label: "Year of construction",
-      value: year
-    },
-    {
-      icon: require("../../assets/images/ico-rooms.svg"),
-      label: "Number of rooms",
-      value: rooms
-    },
-    {
-      icon: require("../../assets/images/ico-living.svg"),
-      label: "Living",
-      value: `${living} m²`
-    },
-    {
-      icon: require("../../assets/images/ico-plot.svg"),
-      label: "Plot",
-      value: `${plot} m²`
-    }
-  ];
+  const data = [];
+
+  year && data.push({
+    icon: require("../../assets/images/ico-year.svg"),
+    label: "Year of construction",
+    value: year
+  });
+
+  rooms && data.push({
+    icon: require("../../assets/images/ico-rooms.svg"),
+    label: "Number of rooms",
+    value: rooms
+  });
+
+  living && data.push({
+    icon: require("../../assets/images/ico-living.svg"),
+    label: "Living",
+    value: `${living} m²`
+  });
+
+  plot && data.push({
+    icon: require("../../assets/images/ico-plot.svg"),
+    label: "Plot",
+    value: `${plot} m²`
+  });
+
 
   return (
     <div className={styles.element}>

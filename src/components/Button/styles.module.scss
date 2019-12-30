@@ -13,9 +13,14 @@
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: 0 0 8px $secondary             !important;        
   }
 }
 
@@ -26,6 +31,7 @@
   &:disabled {
     background-color: lighten($primary, 10%);
   }
+
 }
 
 :local(.button--secondary) {
@@ -33,6 +39,6 @@
   color: $white;
 
   &:disabled {
-    background-color: lighten($secondary, 10%);
+    background-color: lighten($secondary, 3%);
   }
 }

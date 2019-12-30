@@ -10,7 +10,7 @@ const Makelaar: React.FC<Props> = ({ name, phone }) => (
       <div className={styles.name}>{name}</div>
       <div>{phone}</div>
     </div>
-    <Button variant="secondary">Contact</Button>
+    <Button variant="secondary" href={`tel:${phone}`}>Contact</Button>
   </div>
 );
 
